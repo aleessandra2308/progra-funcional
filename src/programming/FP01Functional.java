@@ -6,9 +6,11 @@ public class FP01Functional{
 
     public static void main(String[] args) {
         List<Integer> numbers = List.of(12,9,13,4,6,2,4,12,15);
-        printAllNumbersInListFunctional(numbers);
-        printEvenNumbersInListFunctional(numbers);
+        List<String> courses = List.of("Spring", "Spring boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernetes");
         
+        //printAllNumbersInListFunctional(numbers);
+        //printEvenNumbersInListFunctional(numbers);
+        printOddNumbersInListFunctional(numbers);
     }
 
     /**private static void print(int number) {
@@ -27,6 +29,17 @@ public class FP01Functional{
         numbers.stream()
             //.filter(FP01Functional::isEven)
             .filter(x -> x%2 == 0) //Lambda
+            .forEach(System.out::println);
+    }
+
+    private static void printOddNumbersInListFunctional(List<Integer> numbers) {
+        numbers.stream()
+            .filter(x -> x%2 !=0)
+            .forEach(System.out::println);
+    }
+
+    private static void printAllCoursesFunctional(List<String> courses) {
+        courses.stream()
             .forEach(System.out::println);
     }
 }
