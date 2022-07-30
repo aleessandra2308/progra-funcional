@@ -10,7 +10,9 @@ public class FP01Functional{
         
         //printAllNumbersInListFunctional(numbers);
         //printEvenNumbersInListFunctional(numbers);
-        printOddNumbersInListFunctional(numbers);
+        //printOddNumbersInListFunctional(numbers);
+        //printAllCoursesFunctional(courses);
+        printContainWordFunctional(courses);
     }
 
     /**private static void print(int number) {
@@ -40,6 +42,12 @@ public class FP01Functional{
 
     private static void printAllCoursesFunctional(List<String> courses) {
         courses.stream()
+            .forEach(System.out::println);
+    }
+
+    private static void printContainWordFunctional(List<String> courses) {
+        courses.stream()
+            .filter(x -> x.contains("Spring"))
             .forEach(System.out::println);
     }
 }
