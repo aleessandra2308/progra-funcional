@@ -9,6 +9,8 @@ public class FP02Functional {
         int sum = addListFunctional(numbers);
         System.out.println(sum);
         System.out.println(printSumSquares(numbers));
+        System.out.println(printSumCubes(numbers));
+        System.out.println(printSumOdd(numbers));
     }
 
     private static int sum(int a, int b){
@@ -27,7 +29,22 @@ public class FP02Functional {
     //elevar los nros de la lista al cuadrado y mostrar la suma de los cuadrados
     public static int printSumSquares(List<Integer> numbers) {
         return numbers.stream()
+            .map(x -> x*x)
+            .reduce(0, Integer::sum);
+    }
+
+    //ejercicio 8
+    public static int printSumCubes(List<Integer> numbers) {
+        return numbers.stream()
             .map(x -> x*x*x)
+            .reduce(0, Integer::sum);
+    }
+
+    //ejercicio 9
+    //find sum of odd numbers in a list
+    public static int printSumOdd(List<Integer> numbers) {
+        return numbers.stream()
+            .filter(x -> x%2 !=0)
             .reduce(0, Integer::sum);
     }
 }
