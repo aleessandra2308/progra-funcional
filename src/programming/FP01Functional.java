@@ -12,7 +12,8 @@ public class FP01Functional{
         //printEvenNumbersInListFunctional(numbers);
         //printOddNumbersInListFunctional(numbers);
         //printAllCoursesFunctional(courses);
-        printContainWordFunctional(courses);
+        //printContainWordFunctional(courses);
+        printCoursesMinLettersFunctional(courses);
     }
 
     /**private static void print(int number) {
@@ -48,6 +49,12 @@ public class FP01Functional{
     private static void printContainWordFunctional(List<String> courses) {
         courses.stream()
             .filter(x -> x.contains("Spring"))
+            .forEach(System.out::println);
+    }
+
+    private static void printCoursesMinLettersFunctional(List<String> courses) {
+        courses.stream()
+            .filter(x -> x.length()>4)
             .forEach(System.out::println);
     }
 }
