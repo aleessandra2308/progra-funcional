@@ -15,7 +15,8 @@ public class FP01Functional{
         //printContainWordFunctional(courses);
         //printCoursesMinLettersFunctional(courses);
         //printSquaresofEvenNumbers(numbers);
-        printCubesofOddNumbers(numbers);
+        //printCubesofOddNumbers(numbers);
+        printNumberCharacters(courses);
     }
 
     /**private static void print(int number) {
@@ -71,6 +72,12 @@ public class FP01Functional{
         numbers.stream()
             .filter(x -> x%2 != 0)
             .map(x -> Math.pow(x, 3))
+            .forEach(System.out::println);
+    }
+
+    private static void printNumberCharacters(List<String> courses) {
+        courses.stream()
+            .map(x -> x.length())
             .forEach(System.out::println);
     }
 }
