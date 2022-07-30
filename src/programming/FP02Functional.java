@@ -8,6 +8,7 @@ public class FP02Functional {
         List<Integer> numbers = List.of(12,9,13,4,6,2,4,12,15);
         int sum = addListFunctional(numbers);
         System.out.println(sum);
+        System.out.println(printSumSquares(numbers));
     }
 
     private static int sum(int a, int b){
@@ -20,5 +21,13 @@ public class FP02Functional {
         //con lambda
         //return numbers.stream().reduce(0, (x,y) -> x+y);
         return numbers.stream().reduce(0, Integer::sum);
+    }
+
+    //ejercicio 7: 
+    //elevar los nros de la lista al cuadrado y mostrar la suma de los cuadrados
+    public static int printSumSquares(List<Integer> numbers) {
+        return numbers.stream()
+            .map(x -> x*x*x)
+            .reduce(0, Integer::sum);
     }
 }
