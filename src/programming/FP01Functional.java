@@ -13,7 +13,8 @@ public class FP01Functional{
         //printOddNumbersInListFunctional(numbers);
         //printAllCoursesFunctional(courses);
         //printContainWordFunctional(courses);
-        printCoursesMinLettersFunctional(courses);
+        //printCoursesMinLettersFunctional(courses);
+        printSquaresofEvenNumbers(numbers);
     }
 
     /**private static void print(int number) {
@@ -55,6 +56,13 @@ public class FP01Functional{
     private static void printCoursesMinLettersFunctional(List<String> courses) {
         courses.stream()
             .filter(x -> x.length()>4)
+            .forEach(System.out::println);
+    }
+
+    private static void printSquaresofEvenNumbers(List<Integer> numbers) {
+        numbers.stream()
+            .filter(x -> x%2 == 0)
+            .map(x -> x*x)
             .forEach(System.out::println);
     }
 }
